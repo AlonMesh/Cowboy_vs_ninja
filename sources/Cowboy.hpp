@@ -61,7 +61,7 @@ namespace ariel {
          */
         int getAmmo();
 
-        void print() const override;
+        string print() const override;
     };
 }
 

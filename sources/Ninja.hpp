@@ -49,7 +49,7 @@ namespace ariel {
             void actionControl(Character* enemy);
 
             // A pure virtual function that prints the ninja's details
-            virtual void print() const = 0;
+            virtual string print() const = 0;
     };
 
         

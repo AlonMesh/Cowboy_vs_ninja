@@ -10,12 +10,14 @@ namespace ariel {
 
             virtual ~TrainedNinja() = default;
 
-        void print() const override {
-            cout << "\t" << this->name << " (TrainedNinja):" << endl;
-            cout << "\t\tStatus: " << (this->isAlive() ? "Alive" : "Dead") << " (" << getHealthPoints() << " / " << TRAINED_NINJA_HP << ")" << endl;
-            cout << "\t\tLocation: ";
-            getLocation().print();
-            cout << endl;
+        string print() const override {
+            string result;
+            result += "\t" + this->name + " (TrainedNinja):\n";
+            result += "\t\tStatus: ";
+            result += (this->isAlive() ? "Alive" : "Dead");
+            result += " (" + to_string(getHealthPoints()) + " / " + to_string(TRAINED_NINJA_HP) + ")\n";
+            result += "\t\tLocation: (" + to_string(getLocation().getx()) + ", " + to_string(getLocation().gety()) + ")\n";
+            return result;
         }
     };
 }

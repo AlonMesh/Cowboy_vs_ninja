@@ -134,7 +134,7 @@ namespace ariel
          * Print information about the Character to the console, including name, status (alive/dead), health points,
          * and location.
          */
-        virtual void print() const = 0; // pure virtual function
+        virtual string print() const = 0; // pure virtual function
 
         // Get the amount of damage a Character dealt
         int GetDmgDealt();

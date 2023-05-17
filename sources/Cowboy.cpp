@@ -45,12 +45,14 @@ namespace ariel {
         return this->ammo;
     }
 
-    void Cowboy::print() const {
-        cout << "\t" << this->name << " (Cowboy):" << endl;
-        cout << "\t\tStatus: " << (this->isAlive() ? "Alive" : "Dead") << " (" << getHealthPoints() << " / " << COWBOY_HP << ")" << endl;
-        cout << "\t\tLocation: ";
-        getLocation().print();
-        cout << endl;
+    string Cowboy::print() const {
+        string result;
+        result += "\t" + this->name + " (Cowboy):\n";
+        result += "\t\tStatus: ";
+        result += (this->isAlive() ? "Alive" : "Dead");
+        result += " (" + to_string(getHealthPoints()) + " / " + to_string(COWBOY_HP) + ")\n";
+        result += "\t\tLocation: (" + to_string(getLocation().getx()) + ", " + to_string(getLocation().gety()) + ")\n";
+        return result;
     }
     
 } // namespace ariel
